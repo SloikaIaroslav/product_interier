@@ -1,0 +1,33 @@
+ <script data-require="angular.js@1.6.1" data-semver="1.6.1" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<div ng-app="" ng-init="url_result='http://interier-plus.com/mebli_shafy_shafy-kupe?sort=p.price&amp;order=ASC&amp;limit=100';type_kupe=true; width_prihogy=false; task='Виберіть будь ласка призначення шафи-купе:'">
+	<h2>
+		{{task}}</h2>
+	<table style="width:100%; text-align:center">
+		<tbody>
+			<tr ng-show="type_kupe">
+				<td class="hover11">
+					<a ng-click="task='Виберіть будь ласка тип фасаду прихожої-купе:'; prihogi_type=!prihogi_type; type_kupe=!type_kupe "><img src="http://interier-plus.com/image/data/Komfort/2016/kupe/kupe_soft_2.jpg" style="width:100%" /></a></td>
+				<td class="hover11">
+					<button><img src="http://interier-plus.com/image/data/Komfort/2016/kupe/kupe_soft_2.jpg" style="width:100%" /></button></td>
+			</tr>
+			<tr ng-show="prihogi_type">
+				<td>
+					<button ng-click="task='Виберіть будь ласка ширину прихожої-купе:'; width_prihogy=!width_prihogy; prihogi_type=!prihogi_type ">Фасад дзеркало</button></td>
+				<td>
+					<button>Фасад глухий</button></td>
+			</tr>
+			<tr ng-show="width_prihogy">
+				<td>
+					<button ng-click="url_result=url_result+'&amp;filter=a_23:1.0;'">1.0м</button></td>
+				<td>
+					<button ng-click="url_result=url_result+'&amp;filter=a_23:1.2;'">1.2м</button></td>
+			</tr>
+			<tr ng-show="width_prihogy">
+				<td>
+					<button ng-click="url_result=url_result+'&amp;filter=a_23:1.4'">1.4м</button></td>
+				<td>
+					<button ng-click="url_result=url_result+'&amp;filter=a_23:2.0'">2.0м</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
